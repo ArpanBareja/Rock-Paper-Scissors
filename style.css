@@ -117,10 +117,21 @@ button:hover, .photos img {
     flex-direction: column;
   }
 
-  .btn img {
+  .btn { 
+    border: none ;
     height: 100px;
-    width: 100px;
+    width: 100px ;
     border-radius: 50%;
+  }
+
+  .btn img {
+    padding: 0px ;
+    height: 100% ;
+    width: 100% ; 
+  
+    box-sizing: border-box ;
+    border-radius: 50%;
+    object-fit: cover;
   }
 
   .scoreBoard {
