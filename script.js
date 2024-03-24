@@ -29,7 +29,7 @@ function compute() {
 // Final Result 
 const GameOver = (userScore , compScore) => {
     if( userScore > compScore ) {
-        msg.innerHTML = "Congralution You Won" ;
+        msg.innerHTML = "Congratulation You Won" ;
         msg.style.color = "green" ;
     }
 
