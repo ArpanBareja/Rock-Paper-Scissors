@@ -32,7 +32,7 @@ const GameOver = (userScore, compScore) => {
     msg.style.color = "red";
   } else {
     msg.innerHTML = "Draw";
-    msg.style.color = "yellow";
+    msg.style.color = "#AF4BE5";
   }
 
   console.log("time to exit");
@@ -43,37 +43,54 @@ const GameOver = (userScore, compScore) => {
   });
 };
 
+// computing single time result
+function checkResult(userId, compId) {
+  console.log(userId, " ", compId);
+  if (userId == compId) return 0;
+
+  if (userId == "paper" && compId == "rock") return 1;
+  if (userId == "rock" && compId == "scissors") return 1;
+  if (userId == "scissors" && compId == "paper") return 1;
+
+  return -1;
+}
+
 // selection of choice by user and score updation
 choices.forEach((choice) => {
   choice.addEventListener("click", () => {
-    
     let id = choice.getAttribute("id");
     let compChoice = compute();
-    console.log(arr[compChoice], " ", id);
     let compId = arr[compChoice];
-    let compChoiceSel = document.querySelector(`#${compId}`) ;
+    let compChoiceSel = document.querySelector(`#${compId}`);
 
-    // unset any border color 
+    // unset any border color
     setTimeout(() => {
-    choices.forEach((choice) => {
-       choice.style.border = '0' ;
-    })}, 500) ;
-    
-    
-    if (id === compId) {
+      choices.forEach((choice) => {
+        choice.style.border = "0";
+      });
+    }, 500);
+
+    //computing single time result
+    let result = checkResult(id, compId);
+    console.log(result);
+    if (result === 1) {
       console.log("you won");
       msg.innerHTML = "You Won in this Turn";
       userScore++;
       userScoreSel.innerHTML = userScore;
-      choice.style.border = "10px solid green" ;
-    } else {
+      choice.style.border = "10px solid green";
+      compChoiceSel.style.border = "10px solid red";
+    } else if (result === -1) {
       msg.innerHTML = "You Lost in this Turn";
       compScore++;
       compScoreSel.innerHTML = compScore;
 
       // set color for user and computer choice
-      choice.style.border = "10px solid red" ;
-      compChoiceSel.style.border = "10px solid green" ;
+      choice.style.border = "10px solid red";
+      compChoiceSel.style.border = "10px solid green";
+    } else {
+      msg.innerHTML = "Draw in this Turn";
+      choice.style.border = "10px solid #A90AFF";
     }
 
     if (userScore + compScore == totalTurns) {
@@ -95,5 +112,3 @@ resetSel.addEventListener("click", () => {
     msg.style.color = "black";
   });
 });
-
-
