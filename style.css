@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: #0099ff;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  /* border: 5px solid rgb(0, 0, 0) ; */
+  font-size: x-large;
+}
+
+.btn {
+  border-radius: 50%;
+}
+
+.btn img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.photos {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 5px solid rgb(233, 4, 225) ; */
+  gap: 100px;
+}
+
+.photos button {
+  border: none;
+}
+
+.scoreBoard {
+  height: 100px;
+  /* border: 5px solid rgb(0, 255, 187) ; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.score {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  /* border: 2px solid black ; */
+}
+
+/* win or loss message */
+.message {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid black;
+  color: #0707078e ;
+}
+
+/* button class flexbox */
+.button {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 5px solid black ; */
+}
+
+/* reset button */
+.button button {
+  height: 50px;
+  width: 100px;
+  color: white;
+  font-size: x-large;
+  border: none;
+  background-color: rgb(23, 122, 14);
+  border-radius: 2rem;
+}
+
+button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  outline: 0px solid black;
+}
+
+.disableAll {
+  opacity: 0.7;
+}
+
+.disableAll:hover {
+  cursor: not-allowed;
+}
+
+@media (max-width: 834px) {
+  .photos {
+    height: 500px;
+    gap: 50px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .btn img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+  }
+
+  .scoreBoard {
+    height: 50px;
+  }
+
+  .score {
+    height: 25px;
+    font-size: small;
+  }
+
+  .message {
+    font-size: small;
+  }
+
+  .button {
+    height: 60px;
+  }
+
+  .button button {
+    height: 40px;
+    font-size: small;
+    width: 80px;
+  }
+}
