@@ -14,13 +14,19 @@ nav {
   font-size: x-large;
 }
 
-.btn {
+.btn { 
+  border: none ;
+  height: 200px;
+  width: 200px ;
   border-radius: 50%;
 }
 
 .btn img {
-  height: 200px;
-  width: 200px;
+  padding: 0px ;
+  height: 100% ;
+  width: 100% ; 
+
+  box-sizing: border-box ;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -34,7 +40,7 @@ nav {
   gap: 100px;
 }
 
-.photos button {
+.photos div,img {
   border: none;
 }
 
@@ -88,7 +94,7 @@ nav {
   border-radius: 2rem;
 }
 
-button:hover {
+button:hover, .photos img {
   opacity: 0.7;
   cursor: pointer;
   outline: 0px solid black;
